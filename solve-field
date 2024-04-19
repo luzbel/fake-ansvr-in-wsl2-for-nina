@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+echo llamas a fake solve-field con "$@" >> /tmp/solve-field-call.txt
+echo el ultimo argumento convertido es `wslpath "${@: -1}"` >> /tmp/solve-field-call.txt
+path=`wslpath "${@: -1}"`
+echo el ultimo argumento convertido es "$path" >> /tmp/solve-field-call.txt
+set -- "${@:1:$#-1}"
+echo el resto de argumentos es "$@" >> /tmp/solve-field-call.txt
+/usr/bin/solve-field.elf "$@" "$path" >> /tmp/solve.txt 2>&1
