@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+echo llamas a fake wcsinfo con "$@" >> /tmp/wcs.txt
+echo el ultimo argumento convertido es `wslpath "${@: -1}"` >> /tmp/wcs.txt
+path=`wslpath "${@: -1}"`
+echo el ultimo argumento convertido es "$path" >> /tmp/wcs.txt
+set -- "${@:1:$#-1}"
+echo el resto de argumentos es "$@" >> /tmp/wcs.txt
+#para depurar
+/usr/bin/wcsinfo.elf "$@" "$path" >> /tmp/wcs.txt 2>&1
+#para que nina tenga la salida
+/usr/bin/wcsinfo.elf "$@" "$path"
