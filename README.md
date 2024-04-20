@@ -6,6 +6,8 @@ Así que quieres usar una versión local de astrometry.net desde N.I.N.A. pero .
 ¿no te fías del ejecutable de ansvr ya que no publica las fuentes?
 ¿crees que la última versión de ansvr no está actualizada y no tiene las últimas versiones de astrometry.net?
 ¿necesitas una versión personalizada de astrometry.net con algún cambio en las fuentes?
+¿usar astrotortilla tampoco parece conveniente por los mismos motivos?
+¿no te fías del ejecutable distribuido por https://www.hnsky.org/linux_subsyst y no te apetece compilar las fuentes?
 
 ¡pues usemos la versión Linux de astrometry.net en WSL2 y engañemos a N.I.N.A. para que piense que está llamando a ansvr!
 
@@ -30,3 +32,5 @@ Puedes abrir un terminal de WSL2 y ver las trazas  en /tmp/solve.txt  o /tmp/wcs
 Lo normal es que tu distribución Linux en WSL2 purgue este directorio en cada reinicio, así que no hay ningún mecanismo de rotado de los ficheros de trazas.
 No olvides copiar estos archivos si quieres guardar trazas de alguna sesión.
 Si en algún momento la resolución se eterniza porque has descargado muchos catálogos y estás seguro que no va a resolver (por ejemplo, si por error has realizado una toma sin quitar  ) lo mejor es terminar el proceso desde una terminal WSL2 con "pkill solve-field" . Así evitas que el proceso de N.I.N.A. deje de responder. Recuerda que si has configurado "Local plate solver" tanto como "Plate solver" y como "Blind solver" tendrás que ejecutar un segundo pkill para terminar el segundo intento de resolución.
+
+Basado en la solución propuesta para usar astrometry.net en WSL2 en https://www.hnsky.org/linux_subsyst
