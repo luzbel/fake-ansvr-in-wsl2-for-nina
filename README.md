@@ -11,22 +11,22 @@ Así que quieres usar una versión local de astrometry.net desde N.I.N.A. pero .
 
 ¡pues usemos la versión Linux de astrometry.net en WSL2 y engañemos a N.I.N.A. para que piense que está llamando a ansvr!
 
-1. Instala WSL2 en Windows
-2. Asegurate de ejecutar los siguientes pasos en la distribución marcada por defecto en WSL2
-  1. Instala astrometry.net con el sistema de paquetes de tu distribución preferida o compilando desde las fuentes
-  2. Renombra /usr/bin/wcsinfo a /usr/bin/wcsinfo.elf
-  3. Renombra /usr/bin/solve-field a /usr/bin/solve-field.elf
-  4. Descarga los scripts solve-field y wcsinfo de este repositorio y copialos en /usr/bin
-  5. Asegurate que los scripts tienen permisos 755 (rwxr-xr-x) para ser usados por cualquier usuario
-3. En Windows
-  1. Crea un directorio para que N.I.N.A. piense que tienes un Cygwin instalado, por ejemplo en %USERPROFILE%\fakecygwin
-  2. Crea un subdirectorio bin, por ejemplo en %USERPROFILE%\fakecygwin\bin
-  3. Copia c:\Windows\System32\bash.exe al directorio bin creado en el paso anterior
-4. En N.I.N.A.
-  1. En el apartado "Plate Solving" de Opciones->Plate Solving elige como Plate Solver "Local plate solver"
-  2. En el apartado "Plate solver setting\Local plate solver" de Opciones->Plate Solving
-    1. En el apartado "Cygwin folder" selecciona el directorio falso de Cygwin creado (la base sin el /bin)
-  3. Usa N.I.N.A. con normalidad
+- Instala WSL2 en Windows
+-  Asegurate de ejecutar los siguientes pasos en la distribución marcada por defecto en WSL2
+	1. Instala astrometry.net con el sistema de paquetes de tu distribución preferida o compilando desde las fuentes
+	2. Renombra /usr/bin/wcsinfo a /usr/bin/wcsinfo.elf
+	3. Renombra /usr/bin/solve-field a /usr/bin/solve-field.elf
+	4. Descarga los scripts solve-field y wcsinfo de este repositorio y copialos en /usr/bin
+	5. Asegurate que los scripts tienen permisos 755 (rwxr-xr-x) para ser usados por cualquier usuario
+- En Windows
+	1. Crea un directorio para que N.I.N.A. piense que tienes un Cygwin instalado, por ejemplo en %USERPROFILE%\fakecygwin
+	2. Crea un subdirectorio bin, por ejemplo en %USERPROFILE%\fakecygwin\bin
+	3. Copia c:\Windows\System32\bash.exe al directorio bin creado en el paso anterior
+- En N.I.N.A.
+	1. En el apartado "Plate Solving" de Opciones->Plate Solving elige como Plate Solver "Local plate solver"
+	2. En el apartado "Plate solver setting\Local plate solver" de Opciones->Plate Solving
+		- En el apartado "Cygwin folder" selecciona el directorio falso de Cygwin creado (la base sin el /bin)
+	3. Usa N.I.N.A. con normalidad
 
 Puedes abrir un terminal de WSL2 y ver las trazas  en /tmp/solve.txt  o /tmp/wcs.txt
 Lo normal es que tu distribución Linux en WSL2 purgue este directorio en cada reinicio, así que no hay ningún mecanismo de rotado de los ficheros de trazas.
