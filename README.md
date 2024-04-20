@@ -1,5 +1,5 @@
 # fake-ansvr-in-wsl2-for-nina
-[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/luzbel/fake-ansvr-in-wsl2-for-nina/blob/master/README.en.md)
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/luzbel/fake-ansvr-in-wsl2-for-nina/blob/main/README.en.md)
 
 Scripts y procedimientos para poder usar desde N.I.N.A. una versión actualizada de astrometry.net instalada en WSL2 en vez de ansvr
 
